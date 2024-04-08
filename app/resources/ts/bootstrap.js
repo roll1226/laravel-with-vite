@@ -5,8 +5,6 @@
  */
 
 import axios from "axios";
-import { createApp } from "vue/dist/vue.esm-bundler.js";
-import App from "./vue/App.vue";
 
 window.axios = axios;
 window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
@@ -32,11 +30,3 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 //     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME ?? 'https') === 'https',
 //     enabledTransports: ['ws', 'wss'],
 // });
-
-const app = createApp({
-    components: {
-        App,
-    },
-});
-
-app.mount("#app");
