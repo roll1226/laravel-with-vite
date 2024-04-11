@@ -1,3 +1,10 @@
+<script setup lang="ts">
+type PropsType = {
+    context: string;
+};
+defineProps<PropsType>();
+</script>
+
 <template>
-    <div>hoge</div>
+    <div>{{ context }}</div>
 </template>

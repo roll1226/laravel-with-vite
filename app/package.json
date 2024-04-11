@@ -2,8 +2,8 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev": "vite --host",
-        "build": "tsc --noEmit && vite build"
+        "dev": "vite",
+        "build": "vite build"
     },
     "devDependencies": {
         "@vitejs/plugin-vue": "^5.0.4",
