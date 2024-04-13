@@ -2,6 +2,27 @@
 
 namespace App\Services\Task;
 
+use App\Repositories\Task\TaskRepositoryInterface;
+
 class TaskService implements TaskServiceInterface
 {
+    private TaskRepositoryInterface $taskRepository;
+
+    /**
+     * @param TaskRepositoryInterface $taskRepository
+     */
+    public function __construct($taskRepository)
+    {
+        $this->taskRepository = $taskRepository;
+    }
+
+    public function getAllTask()
+    {
+        return $this->taskRepository->getAllTasks();
+    }
+
+    public function getTaskById($id)
+    {
+        return $this->taskRepository->getTaskById($id);
+    }
 }
