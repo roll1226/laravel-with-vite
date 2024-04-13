@@ -87,7 +87,7 @@ class CreateServiceFileCommand extends Command
      */
     private function createServiceFile(): void
     {
-        $content = "<?php\n\nnamespace App\\Services\\$this->dirName;\n\nclass $this->fileName" . "Service implements $this->fileName" . "Interface\n{\n}\n";
+        $content = "<?php\n\nnamespace App\\Services\\$this->dirName;\n\nclass $this->fileName" . "Service implements $this->fileName" . "ServiceInterface\n{\n}\n";
         file_put_contents($this->serviceFileName, $content);
     }
 

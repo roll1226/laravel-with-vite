@@ -87,7 +87,7 @@ class CreateRepositoryFileCommand extends Command
      */
     private function createRepositoryFile(): void
     {
-        $content = "<?php\n\nnamespace App\\Repositories\\$this->dirName;\n\nclass $this->fileName" . "Repository implements $this->fileName" . "Interface\n{\n}\n";
+        $content = "<?php\n\nnamespace App\\Repositories\\$this->dirName;\n\nclass $this->fileName" . "Repository implements $this->fileName" . "RepositoryInterface\n{\n}\n";
         file_put_contents($this->repositoryFileName, $content);
     }
 

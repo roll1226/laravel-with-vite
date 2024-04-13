@@ -100,6 +100,10 @@ create-seeder:
 	docker compose exec app php artisan make:seeder ${name}
 create-model:
 	docker compose exec app php artisan make:model ${name} --migration
+create-repository:
+	docker compose exec app php artisan make:repository ${name}
+create-service:
+	docker compose exec app php artisan make:service ${name}
 migrate:
 	docker compose exec app php artisan migrate
 migrate-rollback:
