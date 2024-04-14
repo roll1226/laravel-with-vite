@@ -3,16 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\Task;
+use App\Repositories\Task\TaskRepository;
+use App\Services\Task\TaskService;
+use App\Services\Task\TaskServiceInterface;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
+    private TaskServiceInterface $taskService;
+
+    public function __construct()
+    {
+        $this->taskService = new TaskService(new TaskRepository());
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $tasks = $this->taskService->getAllTask();
+        return view('tasks.index', compact('tasks'));
     }
 
     /**
