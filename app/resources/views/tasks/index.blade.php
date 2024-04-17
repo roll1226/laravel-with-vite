@@ -17,7 +17,10 @@
 <body class="antialiased" id='app'>
     @foreach ($tasks as $task)
         {{ $task->status }}
-        {{ $task->context }}
+        <a href="{{ route('tasks.show', ['task' => $task]) }}">
+            {{ $task->context }}
+        </a>
+        <br />
     @endforeach
 </body>
 
