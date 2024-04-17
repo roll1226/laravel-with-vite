@@ -22,11 +22,11 @@ class TasksSeeder extends Seeder
     private function createData(): array
     {
         $data = [];
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 1; $i <= 30; $i++) {
             array_push(
                 $data,
                 [
-                    'context' => Str::random(),
+                    'context' => "タスク" . $i,
                     'status' => rand(1, 4),
                 ]
             );
