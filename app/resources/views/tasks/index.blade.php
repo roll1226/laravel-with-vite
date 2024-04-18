@@ -16,11 +16,13 @@
 
 <body class="antialiased" id='app'>
     @foreach ($tasks as $task)
-        {{ $task->status }}
+        {{-- {{ $task->status }}
         <a href="{{ route('tasks.show', ['task' => $task]) }}">
             {{ $task->context }}
         </a>
-        <br />
+        <br /> --}}
+        <task-component context={{ $task->context }} status={{ $task->status }}
+            task-route={{ route('tasks.show', ['task' => $task]) }}></task-component>
     @endforeach
 </body>
 
