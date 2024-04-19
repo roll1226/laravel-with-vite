@@ -15,19 +15,15 @@
 </head>
 
 <body class="antialiased" id='app'>
-    <form action="{{ route('tasks.create') }}">
-        {{ csrf_field() }}
-        <input type="text" name='context' placeholder="context" />
+    <form action="{{ route('tasks.update', ['task' => $task]) }}" method="POST">
+        @csrf
+        @method('PUT')
+        <input type="text" name='context' placeholder="context" value="{{ $task->context }}" />
         <br>
-        <input type="number" name="status" placeholder="status" />
+        <input type="number" name="status" placeholder="status" value="{{ $task->status }}" />
         <br>
-        <button type="submit">create</button>
+        <button type="submit">update</button>
     </form>
-    <hr />
-    @foreach ($tasks as $task)
-        <task-component context={{ $task->context }} status={{ $task->status }}
-            task-route={{ route('tasks.show', ['task' => $task]) }}></task-component>
-    @endforeach
 </body>
 
 </html>
