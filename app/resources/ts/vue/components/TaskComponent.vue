@@ -9,9 +9,11 @@ defineProps<PropsType>();
 
 <template>
     <div>
-        <a :href="taskRoute">
-            <p>{{ status }}</p>
-            <h4>{{ context }}</h4>
-        </a>
+        <p>
+            <a :href="taskRoute">
+                {{ status }}
+            </a>
+        </p>
+        <p>{{ context }}</p>
     </div>
 </template>

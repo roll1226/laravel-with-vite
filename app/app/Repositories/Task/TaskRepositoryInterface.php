@@ -16,4 +16,10 @@ interface TaskRepositoryInterface
      * @return Task
      */
     public function getTaskById($id);
+
+    /**
+     * @param string $context
+     * @param int $status
+     */
+    public function createTask($context, $status);
 }

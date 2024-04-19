@@ -29,9 +29,12 @@ class TaskController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $context = $request->context;
+        $status = $request->status;
+        $this->taskService->createTask($context, $status);
+        return redirect(route('tasks.index'));
     }
 
     /**

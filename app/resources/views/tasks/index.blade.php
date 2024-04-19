@@ -15,12 +15,16 @@
 </head>
 
 <body class="antialiased" id='app'>
+    <form action="{{ route('tasks.create') }}">
+        {{ csrf_field() }}
+        <input type="text" name='context' placeholder="context" />
+        <br>
+        <input type="number" name="status" placeholder="status" />
+        <br>
+        <button type="submit">submit</button>
+    </form>
+    <hr />
     @foreach ($tasks as $task)
-        {{-- {{ $task->status }}
-        <a href="{{ route('tasks.show', ['task' => $task]) }}">
-            {{ $task->context }}
-        </a>
-        <br /> --}}
         <task-component context={{ $task->context }} status={{ $task->status }}
             task-route={{ route('tasks.show', ['task' => $task]) }}></task-component>
     @endforeach
