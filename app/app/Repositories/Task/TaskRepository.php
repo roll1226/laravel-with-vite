@@ -3,6 +3,7 @@
 namespace App\Repositories\Task;
 
 use App\Models\Task;
+use App\Models\User;
 use PhpParser\Node\Stmt\TryCatch;
 
 class TaskRepository implements TaskRepositoryInterface
@@ -23,5 +24,13 @@ class TaskRepository implements TaskRepositoryInterface
         $task->context = $context;
         $task->status = $status;
         $task->save();
+    }
+
+    public function updateTask($task, $context, $status)
+    {
+        $task->context = $context;
+        $task->status = $status;
+        $task->save();
+        return $task;
     }
 }

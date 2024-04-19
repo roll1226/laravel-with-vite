@@ -66,8 +66,10 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        //
-        dd($task);
+        $context = $request->context;
+        $status = $request->status;
+        $updateTask = $this->taskService->updateTask($task, $context, $status);
+        return redirect(route('tasks.show', ['task' => $updateTask]));
     }
 
     /**

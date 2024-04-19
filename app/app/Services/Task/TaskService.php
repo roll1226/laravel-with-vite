@@ -30,4 +30,9 @@ class TaskService implements TaskServiceInterface
     {
         $this->taskRepository->createTask($context, $status);
     }
+
+    public function updateTask($task, $context, $status)
+    {
+        return $this->taskRepository->updateTask($task, $context, $status);
+    }
 }
