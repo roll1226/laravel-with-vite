@@ -2,7 +2,7 @@
 type PropsType = {
     context: string;
     taskRoute: string;
-    status: number;
+    status: string;
 };
 defineProps<PropsType>();
 </script>
