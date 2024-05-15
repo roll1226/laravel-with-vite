@@ -25,7 +25,7 @@
     </form>
     <hr />
     @foreach ($tasks as $task)
-        <task-component context={{ $task->context }} status={{ $task->status }}
+        <task-component context={{ $task->context }} :status={{ $task->status }}
             task-route={{ route('tasks.show', ['task' => $task]) }}></task-component>
     @endforeach
 </body>
