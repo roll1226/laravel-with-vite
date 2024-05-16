@@ -3,8 +3,7 @@
 namespace App\Repositories\Task;
 
 use App\Models\Task;
-use App\Models\User;
-use PhpParser\Node\Stmt\TryCatch;
+use Illuminate\Support\Facades\DB;
 
 class TaskRepository implements TaskRepositoryInterface
 {
@@ -33,5 +32,18 @@ class TaskRepository implements TaskRepositoryInterface
         $task->status = $status;
         $task->save();
         return $task;
+    }
+
+    public function destroyTask($task)
+    {
+        DB::beginTransaction();
+        $result = $task->delete();
+        if ($result) {
+            DB::commit();
+        } else {
+            DB::rollback();
+        }
+
+        return $result;
     }
 }

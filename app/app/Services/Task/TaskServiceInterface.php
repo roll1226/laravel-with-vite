@@ -31,4 +31,10 @@ interface TaskServiceInterface
      * @return Task
      */
     public function updateTask($task, $context, $status);
+
+    /**
+     * @param Task $task
+     * @return boolean
+     */
+    public function destroyTask($task);
 }

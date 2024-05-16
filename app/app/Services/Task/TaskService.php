@@ -35,4 +35,9 @@ class TaskService implements TaskServiceInterface
     {
         return $this->taskRepository->updateTask($task, $context, $status);
     }
+
+    public function destroyTask($task)
+    {
+        return $this->taskRepository->destroyTask($task);
+    }
 }

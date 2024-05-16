@@ -17,6 +17,13 @@
 <body class="antialiased" id='app'>
     {{ $task->status }}
     {{ $task->context }}
+    <form action={{ route('tasks.destroy', $task) }} method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit">
+            削除
+        </button>
+    </form>
 </body>
 
 </html>

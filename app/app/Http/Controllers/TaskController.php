@@ -77,6 +77,11 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
-        //
+        $result = $this->taskService->destroyTask($task);
+        if ($result) {
+            return redirect(route('tasks.index'));
+        } else {
+            return redirect(route('tasks.show', $task));
+        }
     }
 }
