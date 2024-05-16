@@ -20,7 +20,7 @@ interface TaskServiceInterface
     /**
      * @param string $context
      * @param int $status
-     * @return void
+     * @return Task
      */
     public function createTask($context, $status);
 

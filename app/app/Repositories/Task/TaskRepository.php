@@ -24,6 +24,7 @@ class TaskRepository implements TaskRepositoryInterface
         $task->context = $context;
         $task->status = $status;
         $task->save();
+        return $task;
     }
 
     public function updateTask($task, $context, $status)

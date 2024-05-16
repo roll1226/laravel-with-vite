@@ -20,6 +20,7 @@ interface TaskRepositoryInterface
     /**
      * @param string $context
      * @param int $status
+     * @return Task
      */
     public function createTask($context, $status);
 

@@ -33,8 +33,8 @@ class TaskController extends Controller
     {
         $context = $request->context;
         $status = $request->status;
-        $this->taskService->createTask($context, $status);
-        return redirect(route('tasks.index'));
+        $task = $this->taskService->createTask($context, $status);
+        return redirect(route('tasks.show', $task));
     }
 
     /**
