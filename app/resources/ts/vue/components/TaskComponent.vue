@@ -5,6 +5,11 @@ type PropsType = {
     status: number;
 };
 defineProps<PropsType>();
+
+const handleTest = async () => {
+    const result = await fetch("/api/tasks/1").then((res) => res.json());
+    console.log(result);
+};
 </script>
 
 <template>
@@ -15,5 +20,6 @@ defineProps<PropsType>();
             </a>
         </p>
         <p>{{ context }}</p>
+        <button @click="handleTest">Async</button>
     </div>
 </template>
