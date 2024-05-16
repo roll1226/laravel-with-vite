@@ -15,8 +15,8 @@
 </head>
 
 <body class="antialiased" id='app'>
-    {{ $task->status }}
-    {{ $task->context }}
+    <task-component context={{ $task->context }} :status={{ $task->status }}
+        task-route={{ route('tasks.show', ['task' => $task]) }}></task-component>
     <form action={{ route('tasks.destroy', $task) }} method="POST">
         @csrf
         @method('DELETE')
