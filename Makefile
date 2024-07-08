@@ -9,10 +9,10 @@ restart:
 	@make up
 ps:
 	docker compose ps
-app:
+php:
 	docker compose exec app bash
 web:
-	docker compose exec web bash
+	docker compose exec web sh
 db:
 	docker compose exec db bash
 node:
@@ -40,9 +40,9 @@ log-web:
 	docker compose logs web
 log-web-watch:
 	docker compose logs --follow web
-log-app:
+log-php:
 	docker compose logs app
-log-app-watch:
+log-php-watch:
 	docker compose logs --follow app
 log-db:
 	docker compose logs db
